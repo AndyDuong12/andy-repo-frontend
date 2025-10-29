@@ -7,14 +7,143 @@
     <title>05 - Form</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="05-form.js"></script>
   </head>
-  <body>
-    <main>
-      <form>
-        <h1>Exercise 05 - Form</h1>
+  <body class="bg-dark d-flex justify-content-center">
+    <main class="border rounded m-5 p-3 bg-white w-50">
+      <form id="form" action="">
+        <h1 class="mt-2 mb-4 text-center">Exercise 05 - Form</h1>
+
+        <!-- Full Name -->
+        <div class="mb-3">
+          <label for="fullName" class="form-label"
+            ><strong>Full Name:</strong></label
+          >
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            class="form-control"
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label"><strong>Email:</strong></label>
+          <input type="email" id="email" name="email" class="form-control" />
+        </div>
+
+        <!-- Registration Status -->
+        <div class="mb-3">
+          <label for="registrationStatus" class="mb-2"
+            ><strong>Registration Status:</strong></label
+          >
+          <select id="registrationStatus" class="form-select">
+            <option>Choose an Option</option>
+            <option>Registered</option>
+            <option>Not Registered</option>
+          </select>
+        </div>
+
+        <!-- Courses taken -->
+        <div class="mb-3">
+          <p class="mb-2">
+            <strong>Have you taken any of the following courses?</strong>
+          </p>
+
+          <!-- Programming Languages -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="prog-languages"
+            />
+            <label class="form-check-label" for="prog-languages"
+              >Programming Languages</label
+            >
+          </div>
+
+          <!-- Operating Systems -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="op-systems" />
+            <label class="form-check-label" for="op-systems"
+              >Operating Systems</label
+            >
+          </div>
+
+          <!-- Full Stack Web Developments -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="fullstack-webdev"
+            />
+            <label class="form-check-label" for="fullstack-webdev"
+              >Full Stack Web Developments</label
+            >
+          </div>
+        </div>
+
+        <!-- Comments -->
+        <div class="mb-3">
+          <label for="comments" class="form-label"
+            ><strong>Anything else?</strong></label
+          >
+          <textarea
+            type="text"
+            id="comments"
+            name="comments"
+            class="form-control"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <!-- Submit & Reset -->
+        <div class="row g-2 my-3">
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
+          <div class="col-6">
+            <button type="reset" class="btn btn-secondary w-100">Reset</button>
+          </div>
+        </div>
       </form>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="formModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="formModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <!--- Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Exercise 05 - Form</h5>
+            </div>
+
+            <!--- Body -->
+            <div class="modal-body" id="modalBody"></div>
+
+            <!--- Footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
